@@ -1,7 +1,8 @@
 # Cartoon Effect using OpenCV
 
 ## Description
-This project applies a cartoon effect to an image using OpenCV. The effect is achieved by performing edge detection and smoothing the color image, then combining the results to create a stylized cartoon-like output.
+This project applies a cartoon effect to an image using OpenCV. 
+The effect is achieved by performing edge detection and smoothing the color image, then combining the results to create a stylized cartoon-like output.
 
 ## Features
 - Converts an image to a cartoon-style effect.
@@ -22,7 +23,7 @@ pip install opencv-python numpy
 3. Run the script:
 
 ```sh
-python cartoon_effect.py
+python main.py
 ```
 
 4. The output will be saved as `cartoon_output.png`.
@@ -75,13 +76,19 @@ cv2.imwrite("cartoon_output.png", cartoon)
 ```
 - Save the resulting image.
 
-## Example
+## Limitation
+## Success Example
 **Input:**
-![Original Image](mario.png)
-
+![mario](https://github.com/user-attachments/assets/9ec77db6-0861-4af3-9bad-8a017cf98d1f)
 **Output:**
-![Cartoon Effect](cartoon_output.png)
+![mario_cartoon](https://github.com/user-attachments/assets/ea488056-c1ae-48e2-97d4-d0ebda081a25)
 
-## License
-This project is open-source and available under the MIT License.
+## Failure Example
+**Input:**
+![cat](https://github.com/user-attachments/assets/f8b50eb5-a581-45e1-b149-a8f636f67b2b)
+**Output:**
+![cat_cartoon](https://github.com/user-attachments/assets/e8a88478-44f6-4874-9f27-27f2545921bc)
 
+
+In successful cases, the detected edges align well with the important contours perceived by humans, meaning the algorithm captures edges similarly to how humans do. However, in failure cases, while I perceive the cat’s facial outline as the key edge, the algorithm detects fine details such as individual fur strands.
+This highlights a limitation of the algorithm—it detects edges based on specific conditions, and even with hyperparameter adjustments, it is challenging to extract edges exactly as humans would prefer, especially for complex images.
