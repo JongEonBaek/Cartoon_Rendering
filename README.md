@@ -45,3 +45,4 @@ cartoon = cv2.bitwise_and(color, color, mask=edges)
 
 # Save the cartoonized image
 cv2.imwrite("cartoon_output.png", cartoon)
+
